@@ -1,3 +1,4 @@
+const resetButtonEl = document.querySelector(".reset_button");
 const inputEl = document.querySelector(".myText");
 const inputEl2 = document.querySelector(".myText_two");
 const inputEl3 = document.querySelector(".myText_three");
@@ -17,6 +18,16 @@ inputEl2.addEventListener('input', function() {
 inputEl3.addEventListener('input', function() {
 	showTextOutput();
 });
+
+/* ### WHEN USER CLICKS ON RESET BUTTON */
+if (resetButtonEl) { 
+    resetButtonEl.addEventListener("click", function() {
+        inputEl.value = 0;
+        inputEl2.value = 0;
+        inputEl3.value = 0;
+		showTextOutput();
+    });
+}
 
 /*Bereken het banksaldo na rente na (ingevoerd) aantal jaar*/
 function calculateWalletAfterInterest(wallet, rate, period) { //args €, %, years
@@ -63,4 +74,4 @@ function showTextOutput() {
 	}
 }
 
-showTextOutput(); //Show text immediately for cached input values
+showTextOutput(); //Toon als de pagina geladen wordt de gecachte waardes
