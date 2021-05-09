@@ -1,5 +1,4 @@
 const themeButtonEl = document.querySelector(".theme_button");
-//const themeButtonNameEl = document.querySelector(".theme_button .theme_name");
 const body = document.querySelector("body");
 //const overlayEl = document.querySelector(".overlay");
 const themes = ["black_theme", "red_theme", "blue_theme", "ikea_theme"]; // Theme list
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("theme")) {
         selectedTheme = localStorage.getItem("theme");
         body.classList.toggle(selectedTheme);
-        //themeButtonNameEl.innerHTML = (" " + selectedTheme).replace(null, "default");
     }
 
     /*if(overlayEl) {
@@ -44,17 +42,15 @@ if (themeButtonEl) {
                 break;
             }
         }
-        /*themeButtonNameEl.innerHTML = selectedTheme;
-		themeButtonNameEl.innerHTML = (" " + selectedTheme).replace(null, "default");*/
-        if (selectedTheme == null) {
+        if (selectedTheme === null) {
             localStorage.removeItem("theme");
         } else {
-            localStorage.setItem("theme", selectedTheme);
+            localStorage.setItem("theme", selectedTheme); //SAVE THEME
         }
     });
 }
 
-/* ### DO NOT CLOSE DROPDOWN WHILE CHANGING SETTINGS */
+/* ### DO NOT CLOSE BOOTSTRAP DROPDOWN WHILE CHANGING SETTINGS */
 $(function() {
 
     $('.dropdown-toggle').on('click', function(event) {
