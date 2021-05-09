@@ -18,19 +18,23 @@ inputEl3.addEventListener('input', function() {
 	showTextOutput();
 });
 
+/*Bereken het banksaldo na rente na (ingevoerd) aantal jaar*/
 function calculateWalletAfterInterest(wallet, rate, period) { //args €, %, years
-	let realRate = 0.01 * rate; //example: €100,- × 1,04510^year
-	return parseFloat(parseFloat(wallet) * Math.pow(parseFloat(1 + realRate), parseFloat(period))); //remove parsefloat maybe
+	let realRate = 0.01 * rate; //example: €100,- × 1,04510^year aka 4,51% interest/year
+	return parseFloat(parseFloat(wallet) * Math.pow(parseFloat(1 + realRate), parseFloat(period))); //remove parseFloat maybe
 }
 
+/*Bereken de gemiddelde rente per jaar*/
 function calculateAvgInterest(wallet, walletAfter, period) {
 	return (walletAfter - wallet) / period;
 }
 
+/*Converteer naar een eurobedrag (afgerond op 2 decimalen) met komma's in plaats van punten als die aanwezig zijn.*/
 function convertToMoneyString(wallet) {
 	return "€" + Math.abs(wallet).toFixed(2).toString().replace(".", ",");
 }
 
+/*Toon de uitkomst op het scherm*/
 function showTextOutput() {
 	let wallet = inputEl.value;
 	let rate = inputEl2.value;
@@ -41,7 +45,9 @@ function showTextOutput() {
 	
 	let keyword = (rate < 0)?"betaald":"gehad";
 	
-	if(period < 0) { //Rente kan negatief zijn, periode natuurlijk niet. Deze calculator houdt geen rekening met rood staan.
+	if(wallet == "" || rate == "" || period == "") {
+		outputEl.innerHTML = "Je hebt niet alle velden ingevuld.";
+	} else if(period < 0) { //Rente kan negatief zijn, periode natuurlijk niet. Deze calculator houdt geen rekening met rood staan.
 		outputEl.innerHTML = "Het aantal jaar mag niet negatief zijn.";
 	} else if(wallet < 0) { //Rente kan negatief zijn, periode natuurlijk niet. Deze calculator houdt geen rekening met rood staan.
 		outputEl.innerHTML = "Deze calculator houdt geen rekening met een negatief banksaldo.";

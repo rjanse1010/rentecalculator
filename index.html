@@ -2,17 +2,42 @@
 <html>
 	<head>
 		<title>Euro - Rentecalculator</title>
+
+		<link rel="stylesheet" href="./css/index.css">
+
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<link href="./fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
 	</head>
 	<body>
-		<h1>Bereken uw rente</h1>
-		<p>> Lage rente? Misschien is beleggen in aandelen of cryptomunten iets voor u. Overweeg ook een buitenlandse (spaar)bank of deposito.</p>
-		<span>Banksaldo € </span><input type="number" class="myText" value="0">
-		<br>
-		<span>Rente in % </span><input type="number" class="myText_two" value="0">
-		<br>
-		<span>Periode in jaren </span><input type="number" class="myText_three" value="0">
-		<p class="output"></p>
-		
-		<script src="./js/main.js"></script>
+		<div class="container">
+			<br>
+			<div class="card" style="">
+  				<!--<img class="card-img-top" src="..." alt="Card image cap">-->
+				<div class="card-body">
+					<h5 class="card-title">Bereken uw rente <a class="theme_button" href="#"><i class="fas fa-palette"></i></a></h5>
+					<p class="card-text">> Lage rente? Misschien is beleggen in aandelen of cryptomunten iets voor u. Overweeg ook een buitenlandse (spaar)bank of deposito.</p>
+					<span>Banksaldo € </span><input type="number" class="myText" value="0">
+					<br>
+					<span>Rente in % </span><input type="number" class="myText_two" value="0">
+					<br>
+					<span>Periode in jaren </span><input type="number" class="myText_three" value="0">
+					<p class="output"></p>
+<!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+  				</div>
+			</div>
+			<!--<h1>Bereken uw rente</h1>
+			<p>> Lage rente? Misschien is beleggen in aandelen of cryptomunten iets voor u. Overweeg ook een buitenlandse (spaar)bank of deposito.</p>
+			<span>Banksaldo € </span><input type="number" class="myText" value="0">
+			<br>
+			<span>Rente in % </span><input type="number" class="myText_two" value="0">
+			<br>
+			<span>Periode in jaren </span><input type="number" class="myText_three" value="0">
+			<p class="output"></p>-->
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="./bootstrap/js/bootstrap.min.js"></script>
+			<script src="./js/main.js"></script>
+			<script src="./js/themeswitcher.js"></script>
+		</div>
 	</body>
 </html>
