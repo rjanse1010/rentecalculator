@@ -61,11 +61,15 @@ function showTextOutput() {
 	let avgInterest = calculateAvgInterest(wallet, walletAfter, period);
 	
 	let keyword = (rate < 0)?"betaald":"gehad";
+
+	let showError = false;
 	
 	if(wallet == "" || rate == "" || period == "") {
-		outputEl.innerHTML = "Je hebt niet alle velden ingevuld.";
+		outputEl.innerHTML = "Je hebt niet alle velden (correct) ingevuld.";
+		showError = true;
 	} else if(period < 0) { //Rente kan negatief zijn, periode natuurlijk niet. Deze calculator houdt geen rekening met rood staan.
 		outputEl.innerHTML = "Het aantal jaar mag niet negatief zijn.";
+		showError = true;
 	} else if(wallet < 0) { //Rente kan negatief zijn, periode natuurlijk niet. Deze calculator houdt geen rekening met rood staan.
 		outputEl.innerHTML = "Deze calculator houdt geen rekening met een negatief banksaldo.";
 	} else if(period == 0) {
@@ -78,7 +82,15 @@ function showTextOutput() {
 		outputEl.innerHTML = `Na ${ period } jaar heb je ${ convertToMoneyString(walletAfter) } op je rekening staan.
 		Je hebt dan elk jaar gemiddeld ${ convertToMoneyString(avgInterest) } rente ${ keyword }.`;
 	}
-	console.log(outputEl.innerHTML);
+	if(showError) {
+		console.error(outputEl.innerHTML);
+		outputEl.classList.add("text-danger");
+	} else {
+		console.log(outputEl.innerHTML);
+		if(outputEl.classList.contains("text-danger")) {
+			outputEl.classList.remove("text-danger");
+		}
+	}
 }
 
 showTextOutput(); //Toon als de pagina geladen wordt de gecachte waardes
