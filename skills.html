@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Euro - Rentecalculator | Skills</title>
+
+		<link rel="stylesheet" href="./css/index.css">
+
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<link href="./fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+	</head>
+	<body>
+		<div class="container">
+			<br>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">
+						Skills
+						<div class="float-right"><a class="theme_button" href="#" role="button"><i class="fas fa-palette"></i></a></div>
+					</h5>
+					<p>Mijn kwaliteiten:</p>
+					<p>
+						<ul>
+							<li>Niet snel opgeven, vasthoudendheid</li>
+							<li>Behulpzaamheid</li>
+							<li>Perfectionisme</li>
+							<li>(in)zien van details</li>
+						</ul>
+						<p>Mijn skills qua web- en programmeertalen zijn als volgt:</p>
+						<div id="accordion"> <!--Ik gebruik liever geen ID maar dit is nodig voor bootstrap-->
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										C#
+										</button>
+									</h5>
+								</div>
+								<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+									<div class="card-body">
+										Ik heb al enige ervaring opgedaan met deze programmeertaal. Zo heb ik het bijvoorbeeld op de middelbare school gebruikt voor een gameproject in Unity.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										JavaScript
+										</button>
+									</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+									<div class="card-body">
+										Ik gebruik deze taal al zeker 7 jaar en heb hier dus veel ervaring mee.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										HTML/CSS
+										</button>
+									</h5>
+								</div>
+								<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+									<div class="card-body">
+										Als 9 á 10-jarige jongen ontdekte ik hoe leuk het is om websites te 'ontwerpen' en te bouwen.<br>Dit begon met het maken van websites op het platform Webklik, later ook met Weebly en Wix. Hierbij pastte ik af en toe zelf HTML toe.<br>Later ben ik wat meer websites 'from scratch' gaan bouwen: eerst met templates, daarna begon ik ook CSS te begrijpen en zo heb ik mijn eerste websites gebouwd, waaronder dit portfolio.
+									</div>
+								</div>
+							</div>
+						</div>
+					</p>
+				</div>
+				<div class="card-footer text-muted">
+					<a href="index.html" class="btn btn-primary" role="button">Index</a>
+					<a href="overmij.html" class="btn btn-primary" role="button">Over mij</a>
+				</div>
+			</div>
+		</div>
+			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<script src="./js/main.js"></script>
+		<script src="./js/themeswitcher.js"></script>
+	</body>
+</html>
