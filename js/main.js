@@ -5,19 +5,25 @@ const inputEl3 = document.querySelector(".myText_three");
 const outputEl = document.querySelector(".output");
 
 //Als iemand iets invoert in de eerste input:
-inputEl.addEventListener('input', function() {
-	showTextOutput();
-});
+if(inputEl) {
+	inputEl.addEventListener('input', function() {
+		showTextOutput();
+	});
+}
 
 //Als iemand iets invoert in de tweede input:
-inputEl2.addEventListener('input', function() {
-	showTextOutput();
-});
+if(inputEl2) {
+	inputEl2.addEventListener('input', function() {
+		showTextOutput();
+	});
+}
 
 //Als iemand iets invoert in de derde input:
-inputEl3.addEventListener('input', function() {
-	showTextOutput();
-});
+if(inputEl3) {
+	inputEl3.addEventListener('input', function() {
+		showTextOutput();
+	});
+}
 
 /* ### WHEN USER CLICKS ON RESET BUTTON */
 if (resetButtonEl) { 
@@ -25,14 +31,14 @@ if (resetButtonEl) {
         inputEl.value = 0;
         inputEl2.value = 0;
         inputEl3.value = 0;
-		showTextOutput();
+		showTextOutput(); //Show output
     });
 }
 
 /*Bereken het banksaldo na rente na (ingevoerd) aantal jaar*/
 function calculateWalletAfterInterest(wallet, rate, period) { //args €, %, years
 	let realRate = 0.01 * rate; //example: €100,- × 1,04510^year aka 4,51% interest/year
-	return parseFloat(parseFloat(wallet) * Math.pow(parseFloat(1 + realRate), parseFloat(period))); //remove parseFloat maybe
+	return parseFloat(wallet) * Math.pow(parseFloat(1 + realRate), parseFloat(period)); //remove parseFloat maybe
 }
 
 /*Bereken de gemiddelde rente per jaar*/
@@ -72,6 +78,7 @@ function showTextOutput() {
 		outputEl.innerHTML = `Na ${ period } jaar heb je ${ convertToMoneyString(walletAfter) } op je rekening staan.
 		Je hebt dan elk jaar gemiddeld ${ convertToMoneyString(avgInterest) } rente ${ keyword }.`;
 	}
+	console.log(outputEl.innerHTML);
 }
 
 showTextOutput(); //Toon als de pagina geladen wordt de gecachte waardes
