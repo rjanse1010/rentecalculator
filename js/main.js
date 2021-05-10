@@ -5,6 +5,7 @@ const inputEl3 = document.querySelector(".myText_three");
 const outputEl = document.querySelector(".output");
 
 const exButtonEl = document.querySelector(".example_button");
+const exButtonEl2 = document.querySelector(".example_button_two");
 const liEls = document.querySelectorAll("li");
 
 //Als iemand iets invoert in de eerste input:
@@ -103,7 +104,13 @@ if(inputEl && inputEl2 && inputEl3) { //Als de invoervelden op de pagina staan
 if(exButtonEl && liEls) {
 	exButtonEl.addEventListener("click", function() {
         liEls.forEach(function(element, index) {
-			alert("Kwaliteit " + index + " is: " + element.innerHTML);
+			alert("Kwaliteit " + (index + 1) + " is: " + element.innerHTML);
 		});
+    });
+}
+
+if(exButtonEl2) {
+	exButtonEl2.addEventListener("click", function() {
+		spamExample();
     });
 }
