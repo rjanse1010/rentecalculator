@@ -4,6 +4,9 @@ const inputEl2 = document.querySelector(".myText_two");
 const inputEl3 = document.querySelector(".myText_three");
 const outputEl = document.querySelector(".output");
 
+const exButtonEl = document.querySelector(".example_button");
+const liEls = document.querySelectorAll("li");
+
 //Als iemand iets invoert in de eerste input:
 if(inputEl) {
 	inputEl.addEventListener('input', function() {
@@ -93,4 +96,14 @@ function showTextOutput() {
 	}
 }
 
-showTextOutput(); //Toon als de pagina geladen wordt de gecachte waardes
+if(inputEl && inputEl2 && inputEl3) { //Als de invoervelden op de pagina staan
+	showTextOutput(); //Toon als de pagina geladen wordt de eventuele gecachte waardes
+}
+
+if(exButtonEl && liEls) {
+	exButtonEl.addEventListener("click", function() {
+        liEls.forEach(function(element, index) {
+			alert("Kwaliteit " + index + " is: " + element.innerHTML);
+		});
+    });
+}
