@@ -1,3 +1,6 @@
+const backButtonHeader = document.querySelector(".card-header");
+const backButtonEl = document.querySelector(".back_button");
+
 const resetButtonEl = document.querySelector(".reset_button");
 const inputEl = document.querySelector(".myText");
 const inputEl2 = document.querySelector(".myText_two");
@@ -7,6 +10,26 @@ const outputEl = document.querySelector(".output");
 const exButtonEl = document.querySelector(".example_button");
 const exButtonEl2 = document.querySelector(".example_button_two");
 const liEls = document.querySelectorAll("li");
+
+
+/* ### KEEP URL PARAMETERS WHEN GOING TO ANOTHER PAGE */
+const allLinks = document.querySelectorAll("a");
+
+if(allLinks && window.location.search != "") {
+	allLinks.forEach(function(element) {
+		if(element != backButtonEl) {
+			element.setAttribute("href", element.getAttribute("href") + window.location.search);
+		}
+	});
+	const searchParams = new URL(location.href).searchParams;
+	const srcName = searchParams.get('srcname');
+	const srcURL = searchParams.get('src');
+	if(srcName && srcURL) {
+		backButtonEl.href = srcURL;
+		backButtonEl.innerHTML = "<i class='fas fa-long-arrow-alt-left'></i> Terug naar " + srcName;
+		backButtonHeader.classList.remove("hidden");
+	}
+}
 
 //Als iemand iets invoert in de eerste input:
 if(inputEl) {
