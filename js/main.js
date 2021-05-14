@@ -25,8 +25,14 @@ if(allLinks && window.location.search != "") {
 	const srcName = searchParams.get('srcname');
 	const srcURL = searchParams.get('src');
 	if(srcName && srcURL) {
-		backButtonEl.href = srcURL;
 		backButtonEl.innerHTML = "<i class='fas fa-long-arrow-alt-left'></i> Terug naar " + srcName;
+		if(srcURL.startsWith("file:///")) {
+			backButtonEl.addEventListener("click", function() {
+				alert("Helaas, webpagina's die op een server gehost worden mogen niet verwijzen naar lokale bestanden. Je kunt zelf de volgende URL bezoeken: " + srcURL);
+			});
+		} else {
+			backButtonEl.href = srcURL;
+		}
 		backButtonHeader.classList.remove("hidden");
 	}
 }
