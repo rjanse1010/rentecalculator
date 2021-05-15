@@ -12,7 +12,7 @@ const exButtonEl2 = document.querySelector(".example_button_two");
 const liEls = document.querySelectorAll("li");
 
 
-/* ### KEEP URL PARAMETERS WHEN GOING TO ANOTHER PAGE */
+/* ### KEEP URL PARAMETERS WHEN GOING TO ANOTHER PAGE & SHOW BACK BUTTON */
 const allLinks = document.querySelectorAll("a");
 
 if(allLinks && window.location.search != "") {
@@ -26,7 +26,7 @@ if(allLinks && window.location.search != "") {
 	const srcURL = searchParams.get('src');
 	if(srcName && srcURL) {
 		backButtonEl.innerHTML = "<i class='fas fa-long-arrow-alt-left'></i> Terug naar " + srcName;
-		if(srcURL.startsWith("file:///")) {
+		if(srcURL.startsWith("file:///") && !window.location.href.startsWith("file:///")) {
 			backButtonEl.addEventListener("click", function() {
 				alert("Helaas, webpagina's die op een server gehost worden mogen niet verwijzen naar lokale bestanden. Je kunt zelf de volgende URL bezoeken:\n\n" + srcURL);
 			});
