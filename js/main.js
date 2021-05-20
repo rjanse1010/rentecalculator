@@ -17,7 +17,7 @@ const allLinks = document.querySelectorAll("a");
 
 if(allLinks && window.location.search != "") {
 	allLinks.forEach(function(element) {
-		if(element != backButtonEl) {
+		if(element != backButtonEl && !element.getAttribute("href").startsWith("#")) { //Don't change the back button url and don't change anchor links
 			element.setAttribute("href", element.getAttribute("href") + window.location.search);
 		}
 	});
