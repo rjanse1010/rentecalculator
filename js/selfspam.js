@@ -56,8 +56,8 @@ function switchAllImages() {
 }
 
 function img_find() {
-    var imgs = document.querySelectorAll("img"); //Vind alle imgs op de pagina
-    var imgSrcs = [];
+    let imgs = document.querySelectorAll("img"); //Vind alle imgs op de pagina
+    let imgSrcs = [];
 
 	imgs.forEach(function(element) {
 		imgSrcs.push({ //Voeg alle img sources toe als objects aan een array
