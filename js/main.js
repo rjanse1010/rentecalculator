@@ -26,7 +26,7 @@ if(allLinks && window.location.search != "") {
 	const srcURL = searchParams.get('src');
 	if(srcName && srcURL) {
 		backButtonEl.innerHTML = "<i class='fas fa-long-arrow-alt-left'></i> Terug naar " + srcName;
-		if(srcURL.startsWith("file:///") && !window.location.href.startsWith("file:///")) {
+		if(srcURL.startsWith("file://") && !window.location.href.startsWith("file://")) {
 			backButtonEl.addEventListener("click", function() {
 				alert("Helaas, webpagina's die op een server gehost worden mogen niet verwijzen naar lokale bestanden. Je kunt zelf de volgende URL bezoeken:\n\n" + srcURL);
 			});
